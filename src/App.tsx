@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { TopBar } from "./components/Topbar";
+import { Layout } from "antd";
+import { Row, Col, Typography } from "antd";
+import { CompactStock } from "./components/StockCompact";
+import { getAssets } from "./api/assets";
+import { Asset } from "./api/types";
+
+const { Header, Footer, Content } = Layout;
 
 function App() {
+  const [assets, setAssets] = useState<Asset[]>([]);
+  useEffect(() => {
+    async function callAssets() {
+      const result = await getAssets(5, 0);
+      setAssets(result);
+    }
+    callAssets();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout style={{ width: "100vw" }}>
+        <Header style={{ height: "10vh" }}>
+          <TopBar />
+        </Header>
+
+        <Content style={{ textAlign: "left", width: "100vw" }}>
+          <CompactStock {...assets[0]} />
+          <CompactStock {...assets[1]} />
+          <CompactStock {...assets[2]} />
+          <CompactStock {...assets[3]} />
+          <CompactStock {...assets[4]} />
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          <p>Spark! Mini-Hack</p>
+        </Footer>
+      </Layout>
+    </>
   );
 }
 
