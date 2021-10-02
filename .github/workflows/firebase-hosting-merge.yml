@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run NPM Install
-        run: CI=false npm install
+        run: process.env.CI = true && npm install
       - name: RUN npm build
         run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
