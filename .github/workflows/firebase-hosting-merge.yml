@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run NPM Install
-        run: npm install
+        run: CI=false npm install
       - name: RUN npm build
         run: npm run build
       - uses: actions/checkout@v2
