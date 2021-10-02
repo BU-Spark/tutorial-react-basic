@@ -7,13 +7,7 @@ import { Asset } from "../api/types";
 export function CompactStock(props: Asset) {
   return (
     <>
-      <Card
-        onClick={() => {
-          console.log("Hello");
-        }}
-        title={props.name}
-        style={{ width: "100vw", alignContent: "left" }}
-      >
+      <Card title={props.name} style={{ width: "100vw", alignContent: "left" }}>
         <Row>
           <Col style={{ padding: "5px" }}>
             <Statistic
