@@ -1,3 +1,14 @@
+# Basic React Tutorial
+
+This repo is meant to accompany the basic react tutorial workshop or written tutorial. You will get the chance to build a basic React App that loads crypto prices. 
+The template version of this repo is located in `master` branch and the completed lives in `completed`.
+
+If only need `npm` installed on your computer to get this to run. Simply run `npm install` and then `npm start` to get the project running. 
+
+As an alternative use GitPod via this url [https://gitpod.io/#https://github.com/BU-Spark/tutorial-react-basic](https://gitpod.io/#https://github.com/BU-Spark/tutorial-react-basic) which will create a new sandbox for you to follow along(account required).
+
+Data is pulled from: [CoinCap API](https://docs.coincap.io)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
